@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA SAMP Duty Report</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-shield-alt"></i>
+            <h1>GTA SAMP Duty Report</h1>
+            <p>Sistem Pelaporan Duty Online</p>
+        </div>
+
+        <form id="dutyForm" class="form-container">
+            <div class="form-group">
+                <label for="playerName"><i class="fas fa-user"></i> Nama Player:</label>
+                <input type="text" id="playerName" name="playerName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="playerId"><i class="fas fa-id-card"></i> Player ID:</label>
+                <input type="number" id="playerId" name="playerId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="faction"><i class="fas fa-users"></i> Faction:</label>
+                <select id="faction" name="faction" required>
+                    <option value="">Pilih Faction</option>
+                    <option value="LSPD">LSPD</option>
+                    <option value="FBI">FBI</option>
+                    <option value="SASD">SASD</option>
+                    <option value="News">News</option>
+                    <option value="Grove">Grove Street</option>
+                    <option value="Ballers">Ballers</option>
+                    <option value="Vagos">Vagos</option>
+                    <option value="Civilian">Civilian</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rank"><i class="fas fa-star"></i> Rank:</label>
+                <input type="text" id="rank" name="rank" placeholder="Consta/Det/Sgt/Commissioner" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dutyTime"><i class="fas fa-clock"></i> Durasi Duty:</label>
+                <input type="number" id="dutyTime" name="dutyTime" placeholder="Jam (contoh: 4.5)" step="0.1" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="activity"><i class="fas fa-list"></i> Aktivitas Utama:</label>
+                <textarea id="activity" name="activity" rows="4" placeholder="Jelaskan aktivitas yang dilakukan selama duty..." required></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="screenshot" name="screenshot">
+                    Screenshot Duty Dilampirkan
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Kirim Report
+            </button>
+        </form>
+
+        <div id="response" class="response"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
